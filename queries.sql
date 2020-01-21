@@ -32,8 +32,14 @@ SELECT sum(price), created_date
 from expense
 group by strftime("%m-%Y", created_date)
 
+
 -- mostrar los nombres de los usuarios ordenados alfabeticamente
 SELECT user.name
 from user
 order by user.name desc
 
+
+-- seleccionar user name, precio y descripcion = comida //
+SELECT user.name, expense.price, expense.categories
+from expense, user 
+where categories like 'com%' and expense.user_id = user.id
