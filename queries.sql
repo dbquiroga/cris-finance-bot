@@ -32,3 +32,8 @@ SELECT sum(price), created_date
 from expense
 group by strftime("%m-%Y", created_date)
 
+-- mostrar los nombres de los usuarios ordenados alfabeticamente
+SELECT user.name
+from user
+order by user.name desc
+
